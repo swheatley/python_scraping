@@ -1,0 +1,40 @@
+django.views.generic.edit.CreateView
+
+# A view that displays a form for creating an object, redisplaying the form with validation errors ( if there are any) and saving the object.
+# When using the CreateView you have access to self.object, which is the object being created
+
+from django.views.generic.edit
+import CreateView
+from myapp.models import Author
+
+class AuthorCreate(CreateView):
+    model = Author
+    fields = ['name']
+
+<form action=" " method="post">
+{% csrf_token %}
+    {{form.as_p}}
+<input type="submit"
+value="Create"/>
+</form>
+
+django.views.generic.edit.UpdateView
+
+#displays a form for editing an exising object, redisplaying the form with validation errors and saving changes to the object
+
+from django.views.generic.edit
+import UpdateView
+myapp.models import Author
+
+class AuthorUpdate(UpdateView):
+    model = Author
+    fields = ['name']
+    template_name_suffix = '_update_form'
+
+
+DetailView
+
+django.views.generic.detail.DetailView
+
+from django.views.generic.detail import DetailView
+
